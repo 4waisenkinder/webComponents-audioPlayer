@@ -1,0 +1,30 @@
+{
+  "name": "webComponents-audioPlayer",
+  "version": "0.5.0",
+  "description": "audio player widget with web component",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/4waisenkinder/webComponents-audioPlayer.git"
+  },
+  "keywords": [
+    "webcomponents",
+    "polymer",
+    "polyfill",
+    "audio"
+  ],
+  "author": "Stefan Judis, André Kussmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4waisenkinder/webComponents-audioPlayer/issues"
+  },
+  "devDependencies": {
+    "grunt-cli": "~0.1.9",
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}

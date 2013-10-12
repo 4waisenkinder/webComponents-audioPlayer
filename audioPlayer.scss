@@ -1,0 +1,233 @@
+@import "compass/css3";
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/**
+ * variable power
+ */
+$c-controlBarGrayDark: #333;
+$c-controlBarGray: #666;
+$c-controlBarGrayBright: #999;
+$c-orange: #d07313;
+
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f1eb;
+  @include background-image(radial-gradient(center, ellipse cover,  #ffffff 0%, #ffffff 26%, #f5f5f5 59%, #f5f5f5 77%, #cecece 100%));
+
+  /* set 1em to 14px */
+  font-size: 24px;
+  font-family: sans-serif;
+}
+
+.fancyAudioPlayer {
+  position: absolute;
+
+  width: 100%;
+
+  top: 0;
+  left: 0;
+
+  margin: 0;
+
+  background-color: rgba( 0, 0, 0, 0.6 );
+
+  @include border-radius( 0.25em );
+
+  @media screen and (min-width: 500px) {
+    max-width: 500px;
+
+    left : 50%;
+    top : 25%;
+    margin: -2.5em 0 0 -250px;
+  }
+
+  .actionContainer {
+    position: relative;
+    width: 100%;
+    margin: 0 0 0.5em 0;
+
+    @media screen and (min-width: 500px) {
+      width: 33.333%;
+      margin: 0;
+    }
+  }
+
+  .artistImage {
+    width: 96%;
+
+    margin: 0.5em 2%;
+
+    border-radius: 0.5em;
+
+    @media screen and (min-width: 500px) {
+      width: 33%;
+      margin: 1em 0;
+    }
+  }
+
+  .controlBar {
+    position: relative;
+
+    padding: 1em 3%;
+
+    line-height: 2.6em;
+
+    background-color: #333;
+
+    border: 1px solid #222;
+
+    @include border-radius( 0.25em );
+    @include box-shadow(
+      inset 0 1px 0.07em $c-controlBarGrayBright,
+      inset 0 -2px 0.5em $c-controlBarGrayDark
+    );
+    @include background-image( linear-gradient( $c-controlBarGrayDark, $c-controlBarGray ) );
+  }
+
+  .controlBtn {
+    position: relative;
+
+    width: 33.333%;
+    height: 5em;
+
+
+    padding: 0;
+    margin: 0;
+
+    border: 0;
+    border-top: 0.07em solid $c-controlBarGrayDark;
+    border-bottom: 0.07em solid $c-controlBarGrayDark;
+
+    outline: 0;
+
+    cursor: pointer;
+
+    color: transparent;
+
+    @include background-image(
+      linear-gradient(
+        $c-controlBarGray,
+        adjust-lightness( $c-controlBarGrayDark, -2 )
+      )
+    );
+    @include box-shadow(
+      inset 0 1px 0.125em $c-controlBarGrayBright,
+      0 1px 0.125em #000
+    );
+
+    &.bright {
+      @include background-image(
+        linear-gradient(
+          adjust-lightness( $c-controlBarGray, 15 ),
+          adjust-lightness( $c-controlBarGrayDark, 10 )
+        )
+      );
+    }
+
+    &:hover {
+      &:before {
+        color: $c-orange;
+      }
+    }
+
+    &:before {
+      position: absolute;
+
+      width: 100%;
+      height: 100%;
+
+      top: 0;
+      left: 0;
+
+      line-height: 2.5em;
+      font-size: 2em;
+
+      text-align: center;
+
+      color: $c-controlBarGrayDark;
+    }
+
+    &:first-child {
+      border-left: 1px solid $c-controlBarGrayDark;
+
+      @include border-radius( 0.5em 0 0 0.5em );
+      @include box-shadow(
+        inset 0 1px 0.125em $c-controlBarGrayBright,
+        inset -1px 0 0.075em #000,
+        0 1px 0.125em #000
+      );
+
+    }
+
+    &:last-child {
+      border-right: 1px solid $c-controlBarGrayDark;
+      @include border-radius( 0 0.5em 0.5em 0 );
+      @include box-shadow(
+        inset 0 1px 0.125em $c-controlBarGrayBright,
+        inset 1px 0 0.075em #000,
+        0 1px 0.125em #000
+      );
+    }
+  }
+
+  .mainContainer {
+    padding: 0.5em 3%;
+  }
+
+  .progressBar {
+    width: 100%;
+
+    margin: 1em 0 0 0;
+
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+     appearance: none;
+
+    @media screen and (min-width: 500px) {
+      float: right;
+      width: 61.333%;
+      margin: 1em 0 0 5%;
+    }
+
+    &::-webkit-progress-bar {
+      height: 0.75em;
+      border-radius: 1em;
+
+      background-color: $c-controlBarGrayDark;
+
+      @include box-shadow( 0 1px 1px $c-controlBarGrayBright ) ;
+    }
+
+    &::-webkit-progress-value {
+      border-radius: 1em;
+
+      background-color: $c-orange;
+
+      @include box-shadow(
+        0 1px 2px #000,
+        inset 0 2px 6px adjust-lightness( $c-orange, 40 )
+      );
+    }
+  }
+
+  h1 {
+    margin: 0 3%;
+    font-size: 1.5em;
+
+    @media screen and (min-width: 500px) {
+      display: inline-block;
+      width: 61.333%;
+      margin: 0.75em 0 0 5%;
+    }
+  }
+}

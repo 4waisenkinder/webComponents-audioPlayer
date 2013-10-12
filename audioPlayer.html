@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>WebComponent - AudioPlayer</title>
+  </head>
+  <body>
+    <div class="fancyAudioPlayer">
+      <div class="mainContainer">
+        <img class="artistImage" src="http://placedog.com/140/140" />
+        <h1>Snoop Dog</h1>
+      </div>
+      <div class="controlBar">
+        <progress class="progressBar" max="100" value="50"></progress>
+        <div class="actionContainer">
+          <button
+            id="back"
+            class="controlBtn fontawesome-backward"
+            disabled="true"
+          >Back</button>
+          <button
+            id="play"
+            class="controlBtn fontawesome-play bright"
+            disabled="true"
+          >Play</button>
+          <button
+            id="forward"
+            class="controlBtn fontawesome-forward"
+            disabled="true"
+          >Forward</button>
+        </div>
+
+        <span id="timePlayed" style="display: none;"></span>
+        <span style="display: none;"> / </span>
+        <span id="duration" style="display: none;"></span>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+<!--<script
+  src="http://api.soundcloud.com/tracks.json?limit=10&callback=createTrackList&client_id=54c92eba43154126e2a9c5046d707dd2"
+></script>-->
