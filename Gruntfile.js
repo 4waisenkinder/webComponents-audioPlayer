@@ -12,9 +12,20 @@ module.exports = function(grunt) {
         }
       }
     },
+    htmlmin: {
+      minify: {
+        options: {
+          collapseWhitespace: true,
+          removeComments: true
+        },
+        files: {
+          'audioPlayer.min.html': 'audioPlayer.temp.html'
+        }
+      }
+    },
     watch: {
       source: {
-        files: ['index.jade', 'style.less'],
+        files: ['audioPlayer.html', 'audioPlayer.scss'],
         tasks: ['default'],
         options: {
           atBegin: true,
@@ -29,5 +40,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['compass']);
+  grunt.registerTask('htmlPrepare', function() {
+    grunt.file.write('audioPlayer.temp.html', grunt.template.process(
+      grunt.file.read('audioPlayer.html'),
+      {data: {css: grunt.file.read('audioPlayer.css')}}
+    ));
+  });
+  grunt.registerTask('clean', function() {
+    grunt.file.delete('audioPlayer.css');
+    grunt.file.delete('.sass-cache');
+    grunt.file.delete('audioPlayer.temp.html');
+  });
+  grunt.registerTask('default', ['compass', 'htmlPrepare', 'htmlmin', 'clean']);
 };
