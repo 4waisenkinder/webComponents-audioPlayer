@@ -3,6 +3,12 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    clean: [
+      'audioPlayer.css',
+      '.sass-cache',
+      'audioPlayer.min.js',
+      'audioPlayer.temp.html'
+    ],
     compass: {
       compile: {
         options: {
@@ -46,6 +52,7 @@ module.exports = function(grunt) {
   });
 
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -60,13 +67,6 @@ module.exports = function(grunt) {
         js: grunt.file.read('audioPlayer.min.js')
       }}
     ));
-  });
-
-  grunt.registerTask('clean', function() {
-    grunt.file.delete('audioPlayer.css');
-    grunt.file.delete('.sass-cache');
-    grunt.file.delete('audioPlayer.min.js');
-    grunt.file.delete('audioPlayer.temp.html');
   });
 
   grunt.registerTask('default', [
