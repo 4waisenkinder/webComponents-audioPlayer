@@ -1,0 +1,8 @@
+{
+  "name": "webComponent-audioPlayer",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "polymer": "~0.0.20131010"
+  }
+}

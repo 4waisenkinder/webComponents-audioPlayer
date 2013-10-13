@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WebComponents AudioPlayer</title>
+        <meta name="description" content="Fancy super audio player web component">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          .audioContainer {
+            position: absolute;
+
+            width: 100%;
+
+            top: 0;
+            left: 0;
+
+            margin: 0;
+
+          }
+
+          @media screen and (min-width: 500px) {
+            .audioContainer {
+              max-width: 500px;
+
+              left : 50%;
+              top : 25%;
+              margin: -2.5em 0 0 -250px;
+            }
+          }
+        </style>
+
+        <script src="vendor/polymer/polymer.concat.js"></script>
+
+        <link rel="import" href="audioPlayer.min.html">
+    </head>
+    <body>
+      <div class="audioContainer">
+        <fourw-audioplayer></fourw-audioplayer>
+      </div>
+    </body>
+</html>

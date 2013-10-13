@@ -1,44 +1,30 @@
-<html>
-  <head>
-    <title>WebComponent - AudioPlayer</title>
-    <style type="text/css"><%= css %></style>
-    <script type="text/javascript"><%= js %></script>
-  </head>
-  <body>
-    <div class="fancyAudioPlayer">
-      <div class="mainContainer">
-        <img class="artistImage" src="http://placedog.com/140/140" />
-        <h1>Snoop Dog</h1>
-      </div>
-      <div class="controlBar">
-        <progress class="progressBar" max="100" value="50"></progress>
-        <div class="actionContainer">
-          <button
-            id="back"
-            class="controlBtn fontawesome-backward"
-            disabled="true"
-          >Back</button>
-          <button
-            id="play"
-            class="controlBtn fontawesome-play bright"
-            disabled="true"
-          >Play</button>
-          <button
-            id="forward"
-            class="controlBtn fontawesome-forward"
-            disabled="true"
-          >Forward</button>
+<polymer-element name="fourOrphans-audioplayer">
+  <template>
+    <style>
+      <%= css %>
+    </style>
+    <div class="mainContainer">
+        <div class="artistImageContainer">
+          <img class="artistImage" src="http://placedog.com/140/140">
         </div>
-
-        <span id="timePlayed" style="display: none;"></span>
-        <span style="display: none;"> / </span>
-        <span id="duration" style="display: none;"></span>
+        <div class="artistInformation">
+          <h1>Snoop Dog</h1>
+          <h2>10 Lil' Crips</h2>
+        </div>
       </div>
+      <div class="controlBar clearfix">
+        <progress class="progressBar" max="100" value="50"></progress>
+        <ul class="actionContainer">
+          <li class="controlItem"><button id="back"    class="controlBtn fontawesome-backward" disabled="true">Back</button>
+          <li class="controlItem"><button id="play"    class="controlBtn fontawesome-play bright" disabled="true">Play</button>
+          <li class="controlItem"><button id="forward" class="controlBtn fontawesome-forward" disabled="true">Forward</button>
+        </ul>
+      <span id="timePlayed" style="display: none;"></span>
+      <span style="display: none;"> / </span>
+      <span id="duration" style="display: none;"></span>
     </div>
-
-  </body>
-</html>
-
-<!--<script
-  src="http://api.soundcloud.com/tracks.json?limit=10&callback=createTrackList&client_id=54c92eba43154126e2a9c5046d707dd2"
-></script>-->
+  </template>
+  <script>
+    Polymer( 'fourOrphans-audioplayer', {} );
+  </script>
+</polymer-element>
